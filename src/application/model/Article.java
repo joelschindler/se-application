@@ -96,7 +96,10 @@ public class Article implements Entity {
 	 * @return self reference.
 	 */
 	public Article setPrice( final String price ) {
-		this.price = price;
+		if(price.charAt(0)=='-')
+			this.price = "0,00 EUR";
+		else
+			this.price = price;
 		return this;
 	}
 
